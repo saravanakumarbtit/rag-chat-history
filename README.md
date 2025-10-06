@@ -9,6 +9,14 @@ A production-ready microservice to store chat sessions and messages used by a RA
 - Swagger/OpenAPI UI
 - Dockerized (app, postgres, redis, adminer)
 
+## Required softwares to run in local
+- JDK 17+
+- Maven
+- Docker Desktop
+- Postman
+- Intellij or any other IDE for editing code
+
+
 ## Quick start (using Docker Compose)
 1. Set `API_KEY` in `.env` inside 'rag-chat-history' folder
    ![.env file](images/environment_variables.png)
@@ -34,7 +42,7 @@ A production-ready microservice to store chat sessions and messages used by a RA
 2. Adminer (DB browser): http://localhost:8081
    ![Adminer UI](images/Adminer.png)
 3. Actuator: http://localhost:8080/actuator/health
-   ![Actuator UI](images/Actuator.png)
+   ![Actuator UI](images/actuator.png)
 
 
 ## Other commands
