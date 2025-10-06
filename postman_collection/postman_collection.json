@@ -1,0 +1,147 @@
+{
+  "info": {
+    "name": "RAG Chat History API - Full",
+    "_postman_id": "a7d123f4-5678-4321-8910-abcdef123456",
+    "description": "Full Postman collection for RAG Chat History microservice with sample request/response bodies.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get All Sessions",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "X-API-KEY", "value": "{{API_KEY}}", "type": "text" }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/v1/sessions",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "v1", "sessions"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Session",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "X-API-KEY", "value": "{{API_KEY}}", "type": "text" },
+          { "key": "Content-Type", "value": "application/json", "type": "text" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"New Chat Session\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/v1/sessions",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "v1", "sessions"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Rename Session",
+      "request": {
+        "method": "PUT",
+        "header": [
+          { "key": "X-API-KEY", "value": "{{API_KEY}}", "type": "text" },
+          { "key": "Content-Type", "value": "application/json", "type": "text" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Renamed Session\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/v1/sessions/1/rename",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "v1", "sessions", "1", "rename"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Mark Session as Favorite",
+      "request": {
+        "method": "PUT",
+        "header": [
+          { "key": "X-API-KEY", "value": "{{API_KEY}}", "type": "text" }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/v1/sessions/1/favorite",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "v1", "sessions", "1", "favorite"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Session",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          { "key": "X-API-KEY", "value": "{{API_KEY}}", "type": "text" }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/v1/sessions/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "v1", "sessions", "1"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Messages for Session",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "X-API-KEY", "value": "{{API_KEY}}", "type": "text" }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/v1/sessions/1/messages",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "v1", "sessions", "1", "messages"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Add Message",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "X-API-KEY", "value": "{{API_KEY}}", "type": "text" },
+          { "key": "Content-Type", "value": "application/json", "type": "text" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"sessionId\": 1,\n  \"sender\": \"user\",\n  \"content\": \"Hello!\",\n  \"context\": \"Optional context text\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/v1/messages",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "messages"]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    { "key": "API_KEY", "value": "supersecretapikey123" }
+  ]
+}
